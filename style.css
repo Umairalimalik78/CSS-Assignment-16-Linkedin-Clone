@@ -13,13 +13,12 @@ body a {
     --blue: #0a66c2;
     --blue-hover: #004182;
     --blue-light: #e8f3ff;
-    --bg: #f3f2ef;
+    --bg: #f1ece5;
     --surface: #ffffff;
     --border: #e0e0e0;
     --text: #191919;
     --text-muted: #666666;
-    --error: #cc1016;
-    --success: #057642;
+    --red-text: #b24020 ;
 }
 
 #logo {
@@ -217,3 +216,109 @@ main {
 .joinNowTxt a:hover {
     text-decoration: underline;
 }
+
+.catContent{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    max-width: 1128px;
+    margin: auto;
+    padding: 64px 0;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+
+.catogriesSection{
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+#exploreSecion{
+    background-color: var(--blue);
+    color: var(--surface);
+}
+
+.catHeadings{
+    width: 45%;
+    padding-right: 72px;
+}
+
+.catHeadings > h2{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.catHeadings > p{
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+.topicPills{
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 36px;
+    column-gap: 12px;
+}
+
+.topicPills span{
+    padding: 12px 24px;
+    border: 1px solid var(--text);
+    border-radius: 24px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+#exploreSecion span{
+    color: var(--surface);
+    border-color: var(--surface);
+}
+
+.topicPills span:hover{
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--text);
+    text-shadow: 0 0 0.6px currentColor;
+}
+
+#exploreSecion span:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#postJobSection{
+    background-color: var(--bg);
+}
+
+.postJobContent{
+    margin: auto;
+    max-width: 1128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 64px 0;
+    gap: 36px;
+}
+
+.postJobContent h2{
+    font-size: 32px;
+    color: var(--red-text);
+    font-weight: 400;
+}
+
+.postJobContent span{
+    padding: 12px 24px;
+    border: 1px solid var(--blue);
+    border-radius: 24px;
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.postJobContent span:hover{
+    background-color: var(--blue-light);
+}
+
+#toolsSecion .topicPills a:last-child span{
+    color: var(--blue);
+    border-color: var(--blue);
+}
+

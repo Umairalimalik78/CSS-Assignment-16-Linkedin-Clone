@@ -15,14 +15,10 @@ body a {
     --blue-light: #e8f3ff;
     --bg: #f1ece5;
     --surface: #ffffff;
-    --border: #e0e0e0;
+    --border: #b2b2b2;
     --text: #191919;
     --text-muted: #666666;
     --red-text: #b24020 ;
-}
-
-#logo {
-    color: var(--blue);
 }
 
 #header {
@@ -35,14 +31,57 @@ body a {
     z-index: 99;
     background-color: var(--surface);
     overflow: hidden;
+    border: 1px solid #e8e8e8;
 }
 
 #navBar {
-    padding: 12px 0px 16px;
     width: 1128px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#logo {
+    color: var(--blue);
+}
+
+.logo_searchbar{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.searchBox{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    width: 280px;
+    height: 34px;
+    border-radius: 24px;
+}
+
+.searchBox .searchIcon{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+}
+
+.searchBox .searchInput{
+    border: none;
+    font-size: 14px;
+    width: 85%;
+}
+
+.searchBox .searchInput:focus{
+    outline: none;
+}
+
+.searchBox:has(.searchInput:focus) {
+    border: 2px solid var(--text);
+    width: 100%;
 }
 
 nav {
@@ -55,7 +94,7 @@ nav ul {
     list-style: none;
 }
 
-nav ul a svg {
+nav ul a>svg {
     height: 24px;
     align-self: center;
 }
@@ -65,22 +104,44 @@ nav ul a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 0px 8px;
     height: 52px;
-    width: 70px;
+    width: 80px;
     color: var(--text-muted);
     cursor: pointer;
+}
+
+.activeTab{
+    color: var(--text);
+    border-bottom: 2px solid var(--text);
 }
 
 nav ul a:hover {
     color: var(--text);
 }
 
-nav ul li:last-child {
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-}
-
 nav li span {
     font-size: 12px;
+}
+
+.userTab{
+    border-right: 1px solid #e8e8e8;
+    margin-right: 4px;
+}
+
+.userTab img{
+    border-radius: 50%;
+}
+
+.userTab span{
+    display: flex;
+    align-items: center;
+}
+
+.navBtns{
+    width: fit-content;
+    margin: 0px 8px;
+}
+
+.navBtns span{
+    display: flex;
 }

@@ -5,6 +5,10 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+body{
+    background-color: var(--bg);
+}
+
 body a {
     text-decoration: none;
 }
@@ -15,7 +19,7 @@ body a {
     --blue-light: #e8f3ff;
     --bg: #f1ece5;
     --surface: #ffffff;
-    --border: #b2b2b2;
+    --border: #e8e8e8;
     --text: #191919;
     --text-muted: #666666;
     --red-text: #b24020 ;
@@ -55,7 +59,7 @@ body a {
 .searchBox{
     display: flex;
     align-items: center;
-    border: 1px solid var(--border);
+    border: 1px solid var(--text-muted);
     width: 280px;
     height: 34px;
     border-radius: 24px;
@@ -72,7 +76,8 @@ body a {
 .searchBox .searchInput{
     border: none;
     font-size: 14px;
-    width: 85%;
+    width: 100%;
+    margin-right: 8px;
 }
 
 .searchBox .searchInput:focus{
@@ -144,4 +149,149 @@ nav li span {
 
 .navBtns span{
     display: flex;
+}
+
+
+.mainLayout{
+    width: 100%;
+    margin-top: 54px;
+}
+
+.mainContainer{
+    max-width: 1128px;
+    display: grid;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.leftAside{
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leftAsideCard{
+    background-color: var(--surface);
+    border-radius: 8px;
+    outline: 2px solid var(--border);
+    padding: 16px;
+    font-size: 12px;
+}
+
+.miniProfile{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--text);
+    padding: 0;
+}
+
+.miniProfile .miniProfileBg{
+    width: 100%;
+    height: 58px;
+    background-image: url("https://media.licdn.com/dms/image/v2/D4D16AQG1rnIZrJ2n0Q/profile-displaybackgroundimage-shrink_200_800/B4DZxeWNgKJUAY-/0/1771109407830?e=1775088000&v=beta&t=m0-TzudMO4o6maGRrZpHh9FKd2hk-NYsQeJjtcZVSKw");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.miniProfile .miniProfilePic{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin-top: -28px;
+    margin-left: 16px;
+    border: 2px solid var(--surface);
+}
+
+.miniProfileAbout{
+    padding: 16px;
+    font-size: 12px;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: -12px;
+}
+
+.miniProfileAbout h3{
+    font-size: 20px;
+}
+
+.miniProfileLocation{
+    color: var(--text-muted);
+}
+
+.miniProfileEducation{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.miniProfileEducation img{
+    border-radius: 4px;
+    width: 16px;
+}
+
+.profileStatsCard{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.profileStatsCard .profileStats{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.profileStatsCard .profileStats:hover{
+    text-decoration: underline;
+}
+
+.profileStats a{
+    color: var(--text);
+}
+
+.profileStats span{
+    color: var(--blue);
+}
+
+.subscriptionCard p{
+    color: var(--text-muted);
+}
+
+.subscriptionLink{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.quickActionCard ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quickActionTab{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.quickActionTab:hover{
+    text-decoration: underline;
+}
+
+.quickActionTab svg{
+    width: 16px;
 }

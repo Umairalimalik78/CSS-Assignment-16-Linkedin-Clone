@@ -154,7 +154,7 @@
         <div class="mainContainer">
             <aside class="leftAside">
                 <a href="">
-                    <div class="miniProfile leftAsideCard">
+                    <div class="miniProfile asideCard">
                         <div class="miniProfileBg"></div>
                         <img src="/Assets/umairProfile.jpg" alt="User Profile Card Image" class="miniProfilePic">
                         <div class="miniProfileAbout">
@@ -170,7 +170,7 @@
                     </div>
                 </a>
 
-                <div class="profileStatsCard leftAsideCard">
+                <div class="profileStatsCard asideCard">
                     <div class="profileStats">
                         <a href="">Profile viewers</a><span>16</span>
                     </div>
@@ -179,7 +179,7 @@
                     </div>
                 </div>
 
-                <div class="subscriptionCard leftAsideCard">
+                <div class="subscriptionCard asideCard">
                     <p>Get 11x more profile views on average with Premium</p>
                     <a href="" class="subscriptionLink">
                         <svg xmlns="http://www.w3.org/2000/svg" id="premium-chip-v2-medium" aria-hidden="true"
@@ -197,7 +197,7 @@
                     </a>
                 </div>
 
-                <div class="quickActionCard leftAsideCard">
+                <div class="quickActionCard asideCard">
                     <ul>
                         <li>
                             <a href="" class="quickActionTab">
@@ -249,9 +249,144 @@
                 </div>
             </aside>
 
-            <main></main>
+            <main class="feedColumn">
+            </main>
 
-            <aside class="rightAside"></aside>
+            <aside class="rightAside">
+                <div class="dailyGameCard asideCard">
+                    <div class="asideCardHeading">
+                        <h2>Today's puzzle</h2>
+                    </div>
+                    <div class="recommendGameRow">
+                        <img src="/Assets/dailyGameImg.gif" alt="Daily game Suggested Image">
+                        <div class="gameAbout">
+                            <div class="gameDiscription">
+                                <p>Zip - a quick brain teaser</p>
+                                <p>Solve in 60s or less!</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="rtl-flip"
+                                id="chevron-right-small" aria-hidden="true" role="none" data-supported-dps="16x16"
+                                fill="currentColor">
+                                <path d="M5 15l4.61-7L5 1h2.39L12 8l-4.61 7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendationsCard asideCard">
+                    <div class="asideCardHeading">
+                        <h2>Add to your feed</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="signal-notice-small"
+                            aria-hidden="true" role="none" data-supported-dps="16x16" fill="currentColor">
+                            <path
+                                d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <ul class="recommendAccounts">
+                        <li class="recommendIdRow">
+                            <img src="/Assets/recommendIdImg1.jpg" alt="Suggested Profile Image"
+                                class="recommendIdProfile">
+                            <div class="recommendIdAbout">
+                                <h3>HiringMine</h3>
+                                <p>Company • Technology, Information and Internet</p>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="add-small"
+                                        aria-hidden="true" role="none" data-supported-dps="16x16" fill="currentColor">
+                                        <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+                                    </svg>
+                                    Follow
+                                </button>
+                            </div>
+                        </li>
+
+                        <li class="recommendIdRow">
+                            <img src="/Assets/recommendIdImg2.jpg" alt="Suggested Profile Image"
+                                class="recommendIdProfile">
+                            <div class="recommendIdAbout">
+                                <h3>Niaz Ahmad Akhtar (S.I)</h3>
+                                <p>Chairman Higher Education Commission - HEC, Pakistan || Former Vice</p>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="add-small"
+                                        aria-hidden="true" role="none" data-supported-dps="16x16" fill="currentColor">
+                                        <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+                                    </svg>
+                                    Follow
+                                </button>
+                            </div>
+                        </li>
+
+                        <li class="recommendIdRow">
+                            <img src="/Assets/recommendIdImg3.jpg" alt="Suggested Profile Image"
+                                class="recommendIdProfile">
+                            <div class="recommendIdAbout">
+                                <h3>National Youth Leadership Programme (NYLP)</h3>
+                                <p>Company • Education</p>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="add-small"
+                                        aria-hidden="true" role="none" data-supported-dps="16x16" fill="currentColor">
+                                        <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+                                    </svg>
+                                    Follow
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="" class="viewAllrecommends">
+                        View all recommendations
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="rtl-flip"
+                            id="arrow-right-small" aria-hidden="true" role="none" data-supported-dps="16x16"
+                            fill="currentColor">
+                            <path d="M11.45 3L15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <footer>
+                    <!-- CSS: To align all links in the footerLinks div to the center, use:
+                    .footerLinks {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                    }
+                    .footerLinks span {
+                        margin: 0 8px;
+                    }
+                    -->
+                    <div class="footerLinks">
+                        <span><a href="">About</a></span>
+                        <span><a href="">Accessibility</a></span>
+                        <span><a href="">Help Center</a></span>
+                        <span>
+                            <a href="">Privacy & Terms</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="caret-small"
+                                aria-hidden="true" role="none" data-supported-dps="16x16" fill="currentColor">
+                                <path d="M8 11L3 6h10z" fill-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span><a href="">Ad Choices</a></span>
+                        <span><a href="">Advertising</a></span>
+                        <span>
+                            <a href="">Business Services</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="caret-small"
+                                aria-hidden="true" role="none" data-supported-dps="16x16" fill="currentColor">
+                                <path d="M8 11L3 6h10z" fill-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span><a href="">Get the LinkedIn app</a></span>
+                        <span><a href="">More</a></span>
+                    </div>
+
+                    <div class="copyRights">
+                        <img src="/Assets/linkedInMiniLogo.svg" alt="Linkiedin Mini logo">
+                        <span>LinkedIn Corporation © 2026</span>
+                    </div>
+                </footer>
+            </aside>
         </div>
     </div>
 </body>

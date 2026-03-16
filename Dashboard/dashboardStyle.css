@@ -7,6 +7,8 @@
 
 body{
     background-color: var(--bg);
+    font-size: 1.6rem;
+    line-height: 1.5;
 }
 
 body a {
@@ -47,6 +49,9 @@ body a {
 
 #logo {
     color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo_searchbar{
@@ -160,8 +165,10 @@ nav li span {
 .mainContainer{
     max-width: 1128px;
     display: grid;
+    grid-template-columns: 225px 555px 300px;
+    column-gap: 24px;
     margin: auto;
-    padding: 20px 0;
+    padding: 24px 0;
 }
 
 .leftAside{
@@ -171,7 +178,7 @@ nav li span {
     gap: 8px;
 }
 
-.leftAsideCard{
+.asideCard{
     background-color: var(--surface);
     border-radius: 8px;
     outline: 2px solid var(--border);
@@ -294,4 +301,187 @@ nav li span {
 
 .quickActionTab svg{
     width: 16px;
+}
+
+.feedColumn{
+    background-color: var(--surface);
+    border-radius: 8px;
+}
+
+.rightAside{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dailyGameCard{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.asideCardHeading h2{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.recommendGameRow{
+    display: flex;
+    gap: 12px;
+    margin-left: 8px;
+    margin-right: -4px;
+}
+
+.recommendGameRow img{
+    width: 64px;
+    height: 64px;
+}
+
+.gameAbout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.gameAbout svg{
+    width: 16px;
+}
+
+.gameDiscription>p:first-child{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gameDiscription>p:last-child{
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.recommendationsCard{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.asideCardHeading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.asideCardHeading svg{
+    width: 16px;
+    height: 16px;
+}
+
+.recommendAccounts{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recommendIdRow{
+    display: flex;
+    gap: 12px;
+}
+
+.recommendIdRow img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.recommendIdAbout h3{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.recommendIdAbout p{
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.recommendIdAbout button{
+    font-size: 16px;
+    background-color: var(--surface);
+    width: fit-content;
+    border: 1px solid var(--text);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 14px;
+    border-radius: 24px;
+    margin-top: 4px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.recommendIdAbout button svg{
+    width: 16px;
+    height: 16px;
+}
+
+.viewAllrecommends{
+    font-size: 14px;
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text);
+    font-weight: 600;
+    width: fit-content;
+}
+
+.viewAllrecommends svg{
+    width: 16px;
+    margin-top: 2px;
+}
+
+.viewAllrecommends:hover{
+    background-color: #f3f3f3;
+    border-radius: 4px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 24px;
+}
+
+.footerLinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footerLinks>span{
+    font-size: 12px;
+    margin: 4px 8px;
+}
+
+.footerLinks a{
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.footerLinks span:hover,
+.footerLinks a:hover{
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.footerLinks svg{
+    height: 12px;
+    width: 12px;
+}
+
+.copyRights{
+    font-size: 12px;
+    padding: 16px 12px;
+    text-align: center;
 }

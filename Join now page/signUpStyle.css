@@ -400,21 +400,6 @@ main {
     font-weight: 700;
 }
 
-.successAlert {
-    background: var(--blue-light);
-    border: 1px solid var(--blue);
-    border-radius: 4px;
-    padding: 12px;
-    margin-bottom: 12px;
-    font-size: 14px;
-    color: var(--blue-hover);
-    display: none;
-}
-
-.successAlert.isVisible {
-    display: block;
-}
-
 @media (max-width: 500px) {
     .formCard {
         border-radius: 0;

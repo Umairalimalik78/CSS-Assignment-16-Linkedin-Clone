@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umair Ali | LinkedIn</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --colorBrand: #0a66c2;
+      --colorBrandHover: #004182;
+      --colorText: rgba(0,0,0,0.9);
+      --colorTextSecondary: rgba(0,0,0,0.6);
+      --colorBorder: rgba(0,0,0,0.08);
+      --colorBg: #f3f2ef;
+      --colorCardBg: #fff;
+      --colorNavBg: #fff;
+      --colorGreen: #057642;
+      --colorGreenBg: #ebfaf3;
+      --radiusCard: 8px;
+      --shadowCard: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+      --fontMain: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      font-family: var(--fontMain);
+      background-color: var(--colorBg);
+      color: var(--colorText);
+      font-size: 14px;
+      line-height: 1.4;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none;
+    }
+
+    /* ─── NAVBAR ──────────────────────────────────── */
+    .navBar {
+      background: var(--colorNavBg);
+      border-bottom: 1px solid var(--colorBorder);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    .navInner {
+      max-width: 1128px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      height: 52px;
+    }
+
+    .navLogo {
+      display: flex;
+      align-items: center;
+      margin-right: 4px;
+    }
+
+    .navLogo svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .navSearch {
+      background: #eef3f8;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 8px;
+      height: 34px;
+      width: 240px;
+      transition: border-color 0.15s;
+    }
+
+    .navSearch:focus-within {
+      border-color: var(--colorBrand);
+      background: #fff;
+    }
+
+    .navSearch svg {
+      color: var(--colorTextSecondary);
+      flex-shrink: 0;
+    }
+
+    .navSearchInput {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      color: var(--colorText);
+      width: 100%;
+    }
+
+    .navSearchInput::placeholder {
+      color: var(--colorTextSecondary);
+    }
+
+    .navDivider {
+      width: 1px;
+      height: 40px;
+      background: var(--colorBorder);
+      margin: 0 4px;
+    }
+
+    .navLinks {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-left: auto;
+    }
+
+    .navItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      height: 52px;
+      cursor: pointer;
+      position: relative;
+      color: var(--colorTextSecondary);
+      font-size: 12px;
+      gap: 2px;
+      min-width: 56px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .navItem:hover {
+      color: var(--colorText);
+      border-bottom-color: var(--colorText);
+    }
+
+    .navItem.navItemActive {
+      color: var(--colorText);
+      border-bottom-color: var(--colorText);
+    }
+
+    .navItemIcon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navBadge {
+      position: absolute;
+      top: -4px;
+      right: -8px;
+      background: #cc1016;
+      color: #fff;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navAvatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1.5px solid var(--colorBorder);
+    }
+
+    .navAvatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .navPremiumBtn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid var(--colorBrand);
+      color: var(--colorBrand);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 8px;
+      transition: background 0.15s;
+    }
+
+    .navPremiumBtn:hover {
+      background: #ebf3fb;
+    }
+
+    /* ─── LAYOUT ──────────────────────────────────── */
+    .pageContainer {
+      max-width: 1128px;
+      margin: 24px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+    }
+
+    .mainColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sideColumn {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* ─── CARD ──────────────────────────────────── */
+    .card {
+      background: var(--colorCardBg);
+      border-radius: var(--radiusCard);
+      box-shadow: var(--shadowCard);
+      overflow: hidden;
+    }
+
+    /* ─── PROFILE TOP CARD ──────────────────────── */
+    .profileTopCard {
+      background: var(--colorCardBg);
+      border-radius: var(--radiusCard);
+      box-shadow: var(--shadowCard);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .profileCover {
+      height: 160px;
+      overflow: hidden;
+      position: relative;
+      background: #d9e5e7;
+    }
+
+    .profileCover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profileCoverEditBtn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .profileBody {
+      padding: 0 24px 20px;
+    }
+
+    .profileAvatarRow {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: -40px;
+      margin-bottom: 12px;
+    }
+
+    .profileAvatar {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      overflow: hidden;
+      background: #eee;
+      position: relative;
+    }
+
+    .profileAvatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profileEditBtn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--colorBrand);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--colorBrand);
+      transition: background 0.15s;
+    }
+
+    .profileEditBtn:hover {
+      background: #ebf3fb;
+    }
+
+    .profileName {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--colorText);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .verifiedBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #ebf3fb;
+      border: 1px solid var(--colorBrand);
+      border-radius: 12px;
+      padding: 2px 8px;
+      font-size: 11px;
+      color: var(--colorBrand);
+      font-weight: 600;
+    }
+
+    .profileHeadline {
+      font-size: 16px;
+      color: var(--colorText);
+      margin-top: 4px;
+    }
+
+    .profileEdu {
+      font-size: 14px;
+      color: var(--colorTextSecondary);
+      margin-top: 2px;
+    }
+
+    .profileLocation {
+      font-size: 14px;
+      color: var(--colorTextSecondary);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .profileContactLink {
+      color: var(--colorBrand);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .profileContactLink:hover {
+      text-decoration: underline;
+    }
+
+    .profileStats {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+
+    .profileStatLink {
+      color: var(--colorBrand);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .profileStatLink:hover {
+      text-decoration: underline;
+    }
+
+    .statDot {
+      color: var(--colorTextSecondary);
+      font-size: 14px;
+    }
+
+    .profileEduCard {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+
+    .profileEduImg {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--colorBorder);
+    }
+
+    .profileEduImg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profileEduName {
+      color: var(--colorBrand);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .profileActionsRow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btnPrimary {
+      background: var(--colorBrand);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btnPrimary:hover {
+      background: var(--colorBrandHover);
+    }
+
+    .btnOutline {
+      background: transparent;
+      color: var(--colorBrand);
+      border: 1.5px solid var(--colorBrand);
+      border-radius: 20px;
+      padding: 5px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btnOutline:hover {
+      background: #ebf3fb;
+    }
+
+    .btnGhost {
+      background: transparent;
+      color: var(--colorText);
+      border: 1.5px solid rgba(0,0,0,0.4);
+      border-radius: 20px;
+      padding: 5px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btnGhost:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    /* ─── OPEN TO WORK BANNER ─────────────────────── */
+    .openToWorkCard {
+      border: 2px solid var(--colorGreen);
+      border-radius: var(--radiusCard);
+      padding: 14px 16px;
+      margin-top: 16px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .openToWorkLabel {
+      font-weight: 700;
+      color: var(--colorText);
+      font-size: 14px;
+    }
+
+    .openToWorkRoles {
+      font-size: 14px;
+      color: var(--colorText);
+      margin-top: 2px;
+    }
+
+    .openToWorkLink {
+      color: var(--colorGreen);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .openToWorkLink:hover {
+      text-decoration: underline;
+    }
+
+    .openToWorkEditBtn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--colorTextSecondary);
+      padding: 4px;
+    }
+
+    /* ─── SECTION CARD ────────────────────────────── */
+    .sectionCard {
+      background: var(--colorCardBg);
+      border-radius: var(--radiusCard);
+      box-shadow: var(--shadowCard);
+      padding: 20px 24px;
+    }
+
+    .sectionHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .sectionTitle {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--colorText);
+    }
+
+    .sectionEditBtn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--colorText);
+      transition: background 0.15s;
+    }
+
+    .sectionEditBtn:hover {
+      background: rgba(0,0,0,0.08);
+    }
+
+    .sectionPrivateTag {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--colorTextSecondary);
+      font-size: 13px;
+    }
+
+    .sectionBody {
+      font-size: 14px;
+      color: var(--colorText);
+      line-height: 1.6;
+    }
+
+    .showAllLink {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--colorText);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 16px;
+      padding: 8px 0;
+      border-top: 1px solid var(--colorBorder);
+      width: 100%;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+
+    .showAllLink:hover {
+      background: rgba(0,0,0,0.04);
+      border-radius: 4px;
+    }
+
+    .sectionDivider {
+      border: none;
+      border-top: 1px solid var(--colorBorder);
+      margin: 16px 0;
+    }
+
+    /* ─── ANALYTICS ────────────────────────────────── */
+    .analyticsGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .analyticsItem {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .analyticsItem:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    .analyticsIcon {
+      color: var(--colorBrand);
+      flex-shrink: 0;
+    }
+
+    .analyticsNum {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--colorBrand);
+    }
+
+    .analyticsDesc {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+      margin-top: 2px;
+    }
+
+    /* ─── ABOUT ─────────────────────────────────────── */
+    .aboutText {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--colorText);
+      white-space: pre-line;
+    }
+
+    .topSkillsRow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f3f2ef;
+      border-radius: 6px;
+      padding: 12px;
+      margin-top: 12px;
+    }
+
+    .topSkillsLabel {
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .topSkillsList {
+      font-size: 14px;
+      color: var(--colorTextSecondary);
+    }
+
+    /* ─── SERVICES ─────────────────────────────────── */
+    .serviceTag {
+      display: inline-block;
+      border: 1px solid var(--colorBorder);
+      border-radius: 16px;
+      padding: 6px 14px;
+      font-size: 14px;
+      color: var(--colorText);
+      margin: 4px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .serviceTag:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    .serviceTagsRow {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -4px;
+    }
+
+    /* ─── ACTIVITY ──────────────────────────────────── */
+    .activityHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .activityTitleGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .activityTitle {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .activityFollowers {
+      color: var(--colorBrand);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .activityActions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .activityTabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .activityTab {
+      padding: 6px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--colorBorder);
+      background: transparent;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--colorText);
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .activityTab:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    .activityTab.activityTabActive {
+      background: var(--colorText);
+      color: #fff;
+      border-color: var(--colorText);
+    }
+
+    .postCard {
+      border: 1px solid var(--colorBorder);
+      border-radius: var(--radiusCard);
+      overflow: hidden;
+    }
+
+    .postHeader {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 12px 16px 8px;
+    }
+
+    .postAvatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .postAvatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .postAuthorName {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--colorBrand);
+      cursor: pointer;
+    }
+
+    .postAuthorName:hover {
+      text-decoration: underline;
+    }
+
+    .postAuthorHeadline {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+    }
+
+    .postTime {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+    }
+
+    .postText {
+      padding: 0 16px 12px;
+      font-size: 14px;
+      color: var(--colorText);
+      line-height: 1.5;
+    }
+
+    .postImage {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .postImage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .postReactions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      border-top: 1px solid var(--colorBorder);
+    }
+
+    .reactionIcons {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--colorTextSecondary);
+      cursor: pointer;
+    }
+
+    .reactionIcon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-right: -6px;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .reactionIconBlue {
+      background: #378fe9;
+    }
+
+    .reactionIconRed {
+      background: #df704d;
+    }
+
+    .postActions {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 4px 8px;
+      border-top: 1px solid var(--colorBorder);
+    }
+
+    .postActionBtn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 4px;
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--colorTextSecondary);
+      cursor: pointer;
+      transition: background 0.15s;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .postActionBtn:hover {
+      background: rgba(0,0,0,0.06);
+      color: var(--colorText);
+    }
+
+    /* ─── SUGGESTED FOR YOU ─────────────────────────── */
+    .suggestedCard {
+      border: 1px solid var(--colorBorder);
+      border-radius: var(--radiusCard);
+      padding: 16px;
+      position: relative;
+    }
+
+    .suggestedTitle {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .suggestedDesc {
+      font-size: 13px;
+      color: var(--colorTextSecondary);
+      margin-bottom: 12px;
+    }
+
+    .suggestedDismiss {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--colorTextSecondary);
+    }
+
+    /* ─── PROFILE LANGUAGE & PUBLIC URL ────────────── */
+    .sideCardSection {
+      padding: 16px;
+    }
+
+    .sideCardTitle {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .sideCardText {
+      font-size: 14px;
+      color: var(--colorText);
+    }
+
+    /* ─── PEOPLE YOU MAY KNOW ───────────────────────── */
+    .peopleCard {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+    }
+
+    .peopleAvatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--colorBorder);
+      background: #eee;
+    }
+
+    .peopleAvatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .peopleName {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--colorBrand);
+      cursor: pointer;
+    }
+
+    .peopleName:hover {
+      text-decoration: underline;
+    }
+
+    .peopleRole {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+      margin-top: 2px;
+    }
+
+    .peopleConnectBtn {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--colorBrand);
+      border: 1.5px solid var(--colorBrand);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+
+    .peopleConnectBtn:hover {
+      background: #ebf3fb;
+    }
+
+    /* ─── WHO VIEWERS ALSO VIEWED ───────────────────── */
+    .viewerCard {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+
+    .viewerCard:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    .viewerAvatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #eee;
+    }
+
+    .viewerAvatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .viewerDesc {
+      font-size: 13px;
+      color: var(--colorText);
+      font-weight: 600;
+    }
+
+    .viewBtn {
+      margin-left: auto;
+      color: var(--colorBrand);
+      border: 1.5px solid var(--colorBrand);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+
+    .viewBtn:hover {
+      background: #ebf3fb;
+    }
+
+    /* ─── YOU MIGHT LIKE ─────────────────────────────── */
+    .companyCard {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 16px;
+    }
+
+    .companyLogo {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--colorBorder);
+      background: #eee;
+    }
+
+    .companyLogo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .companyName {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--colorText);
+    }
+
+    .companyIndustry {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+    }
+
+    .companyFollowers {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+    }
+
+    .companyFollowBtn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--colorBrand);
+      border: 1.5px solid var(--colorBrand);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      background: transparent;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.15s;
+    }
+
+    .companyFollowBtn:hover {
+      background: #ebf3fb;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    .footer {
+      background: var(--colorCardBg);
+      border-top: 1px solid var(--colorBorder);
+      padding: 20px 16px;
+      margin-top: 24px;
+    }
+
+    .footerInner {
+      max-width: 1128px;
+      margin: 0 auto;
+    }
+
+    .footerLinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-bottom: 12px;
+    }
+
+    .footerLink {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+      cursor: pointer;
+    }
+
+    .footerLink:hover {
+      text-decoration: underline;
+      color: var(--colorBrand);
+    }
+
+    .footerCopy {
+      font-size: 12px;
+      color: var(--colorTextSecondary);
+    }
+
+    /* ─── DROPDOWN ARROW ─────────────────────────────── */
+    .caretIcon {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      margin-left: 2px;
+      vertical-align: middle;
+    }
+
+    /* ─── SVG ICONS ──────────────────────────────────── */
+    .iconSm {
+      width: 16px;
+      height: 16px;
+    }
+
+    .iconMd {
+      width: 24px;
+      height: 24px;
+    }
+
+    .iconBrand {
+      color: var(--colorBrand);
+    }
+
+    /* ─── MEDIA QUERIES ──────────────────────────────── */
+    @media (max-width: 992px) {
+      .pageContainer {
+        grid-template-columns: 1fr;
+      }
+
+      .sideColumn {
+        display: none;
+      }
+
+      .analyticsGrid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navSearch {
+        width: 160px;
+      }
+
+      .navItem {
+        min-width: 44px;
+        padding: 0 6px;
+        font-size: 11px;
+      }
+
+      .profileCover {
+        height: 100px;
+      }
+
+      .profileAvatar {
+        width: 88px;
+        height: 88px;
+      }
+
+      .profileName {
+        font-size: 20px;
+        flex-wrap: wrap;
+      }
+
+      .profileActionsRow {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .activityTabs {
+        gap: 4px;
+      }
+
+      .activityTab {
+        padding: 5px 10px;
+        font-size: 13px;
+      }
+
+      .postActions {
+        flex-wrap: wrap;
+      }
+
+      .postActionBtn {
+        flex: unset;
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navSearch {
+        display: none;
+      }
+
+      .navLinks {
+        gap: 0;
+      }
+
+      .navItem {
+        min-width: 36px;
+        padding: 0 4px;
+      }
+
+      .pageContainer {
+        padding: 0 8px;
+        margin: 12px auto;
+      }
+
+      .profileBody {
+        padding: 0 12px 16px;
+      }
+
+      .sectionCard {
+        padding: 16px;
+      }
+
+      .profileName {
+        font-size: 18px;
+      }
+
+      .profileHeadline {
+        font-size: 14px;
+      }
+
+      .analyticsGrid {
+        grid-template-columns: 1fr;
+      }
+
+      .btnPrimary,
+      .btnOutline,
+      .btnGhost {
+        padding: 5px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─────────────────────────────────── -->
+  <nav class="navBar">
+    <div class="navInner">
+      <!-- Logo -->
+      <a href="#" class="navLogo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" width="34" height="34">
+          <path fill="#0a66c2" d="M34 2.5v29a2.5 2.5 0 0 1-2.5 2.5h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5M10 13H5v16h5zm.45-5.5a2.88 2.88 0 0 0-2.86-2.9H7.5a2.9 2.9 0 0 0 0 5.8 2.88 2.88 0 0 0 2.95-2.81zM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58h-.14V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58h.19c1.59 0 2.77 1 2.77 3.52V29h5z"/>
+        </svg>
+      </a>
+
+      <!-- Search -->
+      <div class="navSearch">
+        <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M14.56 12.44 11.3 9.18a5.51 5.51 0 1 0-2.12 2.12l3.26 3.26a1.5 1.5 0 1 0 2.12-2.12M3 6.5A3.5 3.5 0 1 1 6.5 10 3.5 3.5 0 0 1 3 6.5"/>
+        </svg>
+        <input class="navSearchInput" type="text" placeholder="Search">
+      </div>
+
+      <!-- Nav Links -->
+      <div class="navLinks">
+        <a href="#" class="navItem navItemActive">
+          <div class="navItemIcon">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 9v2h-2v7a3 3 0 0 1-3 3h-4v-6h-4v6H6a3 3 0 0 1-3-3v-7H1V9l11-7z"/></svg>
+          </div>
+          <span>Home</span>
+        </a>
+        <a href="#" class="navItem">
+          <div class="navItemIcon">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16v6H3v-6a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3m5.5-3A3.5 3.5 0 1 0 14 9.5a3.5 3.5 0 0 0 3.5 3.5m1 2h-2a2.5 2.5 0 0 0-2.5 2.5V22h7v-4.5a2.5 2.5 0 0 0-2.5-2.5M7.5 2A4.5 4.5 0 1 0 12 6.5 4.49 4.49 0 0 0 7.5 2"/></svg>
+            <span class="navBadge">1</span>
+          </div>
+          <span>My Network</span>
+        </a>
+        <a href="#" class="navItem">
+          <div class="navItemIcon">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 6V5a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v1H2v4a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6zM9 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9zm10 9a4 4 0 0 0 3-1.38V17a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-4.38A4 4 0 0 0 5 14z"/></svg>
+          </div>
+          <span>Jobs</span>
+        </a>
+        <a href="#" class="navItem">
+          <div class="navItemIcon">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4H8a7 7 0 0 0 0 14h4v4l8.16-5.39A6.78 6.78 0 0 0 23 11a7 7 0 0 0-7-7m-8 8.25A1.25 1.25 0 1 1 9.25 11 1.25 1.25 0 0 1 8 12.25m4 0A1.25 1.25 0 1 1 13.25 11 1.25 1.25 0 0 1 12 12.25m4 0A1.25 1.25 0 1 1 17.25 11 1.25 1.25 0 0 1 16 12.25"/></svg>
+          </div>
+          <span>Messaging</span>
+        </a>
+        <a href="#" class="navItem">
+          <div class="navItemIcon">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 19h-8.28a2 2 0 1 1-3.44 0H2v-1a4.52 4.52 0 0 1 1.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0 1 22 18zM18.21 7.44A6.27 6.27 0 0 0 12 2a6.27 6.27 0 0 0-6.21 5.44L5 13h14z"/></svg>
+            <span class="navBadge">3</span>
+          </div>
+          <span>Notifications</span>
+        </a>
+        <a href="#" class="navItem">
+          <div class="navItemIcon">
+            <div class="navAvatar">
+              <img src="https://media.licdn.com/dms/image/v2/D4D03AQFjpAapjnhz4g/profile-displayphoto-scale_100_100/B4DZkMQHxxG8Ag-/0/1756847178959?e=1776902400&v=beta&t=Od62ZT2qM1ILsZoPORhhaiRKObGZvpJ-RulxLaufXZk" alt="Umair Ali">
+            </div>
+          </div>
+          <span>Me <span class="caretIcon"></span></span>
+        </a>
+
+        <div class="navDivider"></div>
+
+        <a href="#" class="navItem">
+          <div class="navItemIcon">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h2.67v2.67H2zm4.67 2.67h2.67V2H6.67zM11.34 2v2.67h2.67V2zM2 9.33h2.67V6.66H2zm4.67 0h2.67V6.66H6.67zm4.67 0h2.67V6.66h-2.67zM2 14h2.67v-2.67H2zm4.67 0h2.67v-2.67H6.67zm4.67 0h2.67v-2.67h-2.67z"/></svg>
+          </div>
+          <span>For Business <span class="caretIcon"></span></span>
+        </a>
+
+        <a href="#" class="navPremiumBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+            <path fill="#e7a33e" d="M20.01 20.01c.63-.63.99-1.48.99-2.38V6.38C21 4.51 19.49 3 17.62 3H6.38c-.9 0-1.75.36-2.38.99l16.02 16.02z"/>
+            <path fill="#c37d16" d="M3.99 3.99C3.36 4.62 3 5.48 3 6.38v11.25c0 1.87 1.51 3.38 3.38 3.38h11.25c.9 0 1.75-.36 2.38-.99z"/>
+          </svg>
+          Try Premium for Rs 0
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE CONTAINER ─────────────────────────── -->
+  <div class="pageContainer">
+
+    <!-- ─── MAIN COLUMN ──────────────────────────── -->
+    <div class="mainColumn">
+
+      <!-- Profile Top Card -->
+      <div class="profileTopCard">
+        <div class="profileCover">
+          <img src="https://media.licdn.com/dms/image/v2/D4D16AQG1rnIZrJ2n0Q/profile-displaybackgroundimage-shrink_200_800/B4DZxeWNgKJUAY-/0/1771109407830?e=1776902400&v=beta&t=1i6-pLtIYZJaejYwkYjUJIPQzbtKhDiEyNuVbAIxDc8" alt="Cover Photo">
+          <button class="profileCoverEditBtn" aria-label="Edit background image">
+            <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M14.13 1.86a3 3 0 0 0-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 0 0 0-4.16zm-8.36 9.71-1.35-1.34L9.64 5 11 6.35z"/></svg>
+          </button>
+        </div>
+
+        <div class="profileBody">
+          <div class="profileAvatarRow">
+            <a href="#" class="profileAvatar">
+              <img src="https://media.licdn.com/dms/image/v2/D4D03AQFjpAapjnhz4g/profile-displayphoto-scale_200_200/B4DZkMQHxxG8Ac-/0/1756847178959?e=1776902400&v=beta&t=vwHBoB4FvvJ-bJmHtR_JVaCWzOvPOv2sajL-3SLu4sw" alt="Umair Ali">
+            </a>
+            <button class="profileEditBtn" aria-label="Edit profile">
+              <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.13 2.86a3 3 0 0 0-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 0 0 0-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"/></svg>
+            </button>
+          </div>
+
+          <div class="profileName">
+            <a href="#">Umair Ali</a>
+            <span class="verifiedBadge">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="m8 15-.86-.29C3.24 13.41 1 10.62 1 7V2.49L8 0l7 2.49V7c0 3.62-2.23 6.41-6.13 7.71zM3 3.9V7c0 3.53 2.6 5.09 4.78 5.82l.23.08.23-.08C10.01 12.23 13 10.71 13 7V3.9L8 2.11zM9.43 5 7.01 8.02l-1.1-1.1L4.5 8.34l2.67 2.67 4.83-6H9.43z"/></svg>
+              Add verification badge
+            </span>
+          </div>
+
+          <p class="profileHeadline">UI/UX Designer || Computer Science Student || DSU'27 || TCF Alumni</p>
+          <p class="profileEdu">DHA Suffa University</p>
+          <p class="profileLocation">
+            Karāchi, Sindh, Pakistan
+            &nbsp;·&nbsp;
+            <a href="#" class="profileContactLink">Contact info</a>
+          </p>
+
+          <div class="profileStats">
+            <a href="#" class="profileStatLink">278 followers</a>
+            <span class="statDot">·</span>
+            <a href="#" class="profileStatLink">254 connections</a>
+          </div>
+
+          <div class="profileEduCard">
+            <div class="profileEduImg">
+              <img src="https://media.licdn.com/dms/image/v2/C560BAQE7pbuEnUBXXA/company-logo_100_100/company-logo_100_100/0/1631341097646?e=1776902400&v=beta&t=ZTFO-9T4r4gUKsVXf03qTKrhrhIAIm-pG35TtvXaGL4" alt="DHA Suffa University">
+            </div>
+            <span class="profileEduName">DHA Suffa University</span>
+          </div>
+
+          <div class="profileActionsRow">
+            <button class="btnGhost">Open to</button>
+            <button class="btnOutline">Add section</button>
+            <button class="btnOutline">Enhance profile</button>
+            <button class="btnGhost">Resources</button>
+          </div>
+
+          <!-- Open to Work Banner -->
+          <div class="openToWorkCard">
+            <div>
+              <span class="openToWorkLabel">Open to work</span>
+              <p class="openToWorkRoles">User Interface Designer, User Experience Designer and Web Designer roles</p>
+              <a href="#" class="openToWorkLink">Show details</a>
+            </div>
+            <button class="openToWorkEditBtn" aria-label="Edit open to work">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M14.13 1.86a3 3 0 0 0-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 0 0 0-4.16zm-8.36 9.71-1.35-1.34L9.64 5 11 6.35z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggested For You -->
+      <div class="sectionCard">
+        <div class="sectionHeader">
+          <div>
+            <div class="sectionTitle">Suggested for you</div>
+            <div class="sectionPrivateTag">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3a8.59 8.59 0 0 0-8 5 8.54 8.54 0 0 0 8 5 8.55 8.55 0 0 0 8-5 8.55 8.55 0 0 0-8-5m0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3m2-3a2 2 0 1 1-2-2 2 2 0 0 1 2 2"/></svg>
+              Private to you
+            </div>
+          </div>
+        </div>
+        <div class="suggestedCard">
+          <button class="suggestedDismiss" aria-label="Dismiss">
+            <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M14 3.41 9.41 8 14 12.59 12.59 14 8 9.41 3.41 14 2 12.59 6.59 8 2 3.41 3.41 2 8 6.59 12.59 2z"/></svg>
+          </button>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48.11 48.03" fill="currentColor">
+              <path fill="#c0d1e2" d="M27.05 33h-10c-4.28-.11-7.89-4.15-8-8.5.11-4.35 3.72-8.39 8-8.5h10V7H16.42C6.84 7 .05 14.87.05 24.52S6.84 42 16.42 42h10.63z"/>
+              <path fill="#f5987e" d="M27.05 7.03h9v8.99h-9z"/>
+              <path fill="#56687a" d="M27.05 33.02h9v9h-9z"/>
+            </svg>
+            <div>
+              <p class="suggestedTitle">Connect with User Interface Designer to achieve your career goals</p>
+              <p class="suggestedDesc">Find people who can provide guidance and help you find potential opportunities.</p>
+              <a href="#" class="btnOutline" style="display:inline-block;margin-top:8px;">Search for people</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics -->
+      <div class="sectionCard">
+        <div class="sectionHeader">
+          <div>
+            <div class="sectionTitle">Analytics</div>
+            <div class="sectionPrivateTag">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 3a8.59 8.59 0 0 0-8 5 8.54 8.54 0 0 0 8 5 8.55 8.55 0 0 0 8-5 8.55 8.55 0 0 0-8-5m0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3m2-3a2 2 0 1 1-2-2 2 2 0 0 1 2 2"/></svg>
+              Private to you
+            </div>
+          </div>
+        </div>
+        <div class="analyticsGrid">
+          <a href="#" class="analyticsItem">
+            <svg class="iconMd analyticsIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16v6H3v-6a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3m5.5-3A3.5 3.5 0 1 0 14 9.5a3.5 3.5 0 0 0 3.5 3.5m1 2h-2a2.5 2.5 0 0 0-2.5 2.5V22h7v-4.5a2.5 2.5 0 0 0-2.5-2.5M7.5 2A4.5 4.5 0 1 0 12 6.5 4.49 4.49 0 0 0 7.5 2"/></svg>
+            <div>
+              <div class="analyticsNum">15 profile views</div>
+              <div class="analyticsDesc">Discover who's viewed your profile.</div>
+            </div>
+          </a>
+          <a href="#" class="analyticsItem">
+            <svg class="iconMd analyticsIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 20v1H1v-1zM8 9H2v10h6zm7-6H9v16h6zm7 11h-6v5h6z"/></svg>
+            <div>
+              <div class="analyticsNum">0 post impressions</div>
+              <div class="analyticsDesc">Start a post to increase engagement.</div>
+              <div style="font-size:12px;color:var(--colorTextSecondary);">Past 7 days</div>
+            </div>
+          </a>
+          <a href="#" class="analyticsItem">
+            <svg class="iconMd analyticsIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m21.41 18.59-5.27-5.28A6.8 6.8 0 0 0 17 10a7 7 0 1 0-7 7 6.8 6.8 0 0 0 3.31-.86l5.28 5.27a2 2 0 0 0 2.82-2.82M5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5"/></svg>
+            <div>
+              <div class="analyticsNum">2 search appearances</div>
+              <div class="analyticsDesc">See how often you appear in search results.</div>
+            </div>
+          </a>
+        </div>
+        <a href="#" class="showAllLink">
+          <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M11.45 3 15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"/></svg>
+          Show all
+        </a>
+      </div>
+
+      <!-- About -->
+      <div class="sectionCard">
+        <div class="sectionHeader">
+          <div class="sectionTitle">About</div>
+          <button class="sectionEditBtn" aria-label="Edit about">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.13 2.86a3 3 0 0 0-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 0 0 0-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"/></svg>
+          </button>
+        </div>
+        <div class="sectionBody">
+          <p class="aboutText">I design modern, minimal, and user-focused interfaces that help businesses look professional and grow online. My approach is simple — clarity, usability, and clean visuals that instantly connect with users.
+
+Over the past year, I've worked on different UI/UX projects including websites, dashboards, and mobile apps — always aiming to make products not just beautiful but easy to use.
+
+Being a proud TCF alumni, I respect learning, lifelong learning, and making a difference. I am interested to work on projects that are more challenging and can break the boundaries of my creativity.
+
+Got an idea or project in mind? Let's collaborate and turn it into something amazing.
+📩 Email: umairalimalik78@gmail.com</p>
+
+          <div class="topSkillsRow">
+            <svg class="iconMd iconBrand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.36 3H5.64L2 9.5 12 22 22 9.5zm-10.7 7 2.45 6.43L4.96 10zm1.07 0h6.54L12 18.59zm7.61 0h2.7l-5.15 6.43zm3.09-1h-3.07L14.9 5h2.3l2.24 4zm-5.6-4 1.46 4H8.71l1.46-4zM6.81 5h2.3L7.65 9H4.58l2.24-4z"/></svg>
+            <div>
+              <div class="topSkillsLabel">Top skills</div>
+              <div class="topSkillsList">C# · JavaScript · Computer Science · C (Programming Language) · Communication</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="sectionCard">
+        <div class="sectionHeader">
+          <div class="sectionTitle">Services</div>
+          <button class="sectionEditBtn" aria-label="Edit services">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.13 2.86a3 3 0 0 0-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 0 0 0-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"/></svg>
+          </button>
+        </div>
+        <div class="serviceTagsRow">
+          <span class="serviceTag">User Experience Design (UED)</span>
+          <span class="serviceTag">Web Design</span>
+          <span class="serviceTag">Visual Design</span>
+        </div>
+        <a href="#" class="showAllLink">
+          <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M11.45 3 15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"/></svg>
+          Show all
+        </a>
+      </div>
+
+      <!-- Activity -->
+      <div class="sectionCard">
+        <div class="activityHeader">
+          <div class="activityTitleGroup">
+            <div class="activityTitle">Activity</div>
+            <a href="#" class="activityFollowers">278 followers</a>
+          </div>
+          <div class="activityActions">
+            <button class="btnOutline">Create a post</button>
+            <button class="sectionEditBtn">
+              <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.13 2.86a3 3 0 0 0-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 0 0 0-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="activityTabs">
+          <button class="activityTab activityTabActive">Posts</button>
+          <button class="activityTab">Comments</button>
+          <button class="activityTab">Images</button>
+        </div>
+
+        <!-- Post Card 1 -->
+        <div class="postCard">
+          <div class="postHeader">
+            <a href="#" class="postAvatar">
+              <img src="https://media.licdn.com/dms/image/v2/D4D03AQFjpAapjnhz4g/profile-displayphoto-scale_100_100/B4DZkMQHxxG8Ag-/0/1756847178959?e=1776902400&v=beta&t=Od62ZT2qM1ILsZoPORhhaiRKObGZvpJ-RulxLaufXZk" alt="Umair Ali">
+            </a>
+            <div style="flex:1;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+                <div>
+                  <a href="#" class="postAuthorName">Umair Ali</a>
+                  <div class="postAuthorHeadline">UI/UX Designer || Computer Science Student || DSU'27 || TCF Alumni</div>
+                  <div class="postTime">1mo · 🌐</div>
+                </div>
+                <button class="sectionEditBtn">
+                  <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M3 9.5A1.5 1.5 0 1 1 4.5 8 1.5 1.5 0 0 1 3 9.5M11.5 8A1.5 1.5 0 1 0 13 6.5 1.5 1.5 0 0 0 11.5 8m-5 0A1.5 1.5 0 1 0 8 6.5 1.5 1.5 0 0 0 6.5 8"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="postText">
+            Scored 80% (highest) in my recent Web Development quiz at SMIT.<br><br>
+            Consistent effort, concept clarity, and proper guidance make the difference.<br><br>
+            Thankful to <strong>Saylani Mass IT Training</strong> for providing a practical learning platform and to Sir Muhammad Hasan for the mentorship.<br><br>
+            Still learning. Still improving.<br>
+            <strong>#SMIT</strong> <strong>#WebDevelopment</strong> <strong>#Discipline</strong> <strong>#Consistency</strong>
+          </div>
+          <div class="postImage">
+            <img src="https://media.licdn.com/dms/image/v2/D4D22AQGqOxnAqEM9yQ/feedshare-shrink_480/B4DZxhAJtpHwAw-/0/1771153955945?e=1776902400&v=beta&t=lmzrUiyKY-MJFjSqd65lARMElEy90ZgoM2SIs99tmvA" alt="Post image">
+          </div>
+          <div class="postReactions">
+            <div class="reactionIcons">
+              <span class="reactionIcon reactionIconBlue">👍</span>
+              <span class="reactionIcon reactionIconRed">❤️</span>
+              &nbsp;Muhammad Arslan Qureshi and 16 others
+            </div>
+            <span style="font-size:13px;color:var(--colorTextSecondary);">1 comment</span>
+          </div>
+          <div class="postActions">
+            <button class="postActionBtn">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="m12.91 7-2.25-2.57a8.2 8.2 0 0 1-1.5-2.55L9 1.37A2.08 2.08 0 0 0 7 0a2.08 2.08 0 0 0-2.06 2.08v1.17a5.8 5.8 0 0 0 .31 1.89l.28.86H2.38A1.47 1.47 0 0 0 1 7.47a1.45 1.45 0 0 0 .64 1.21 1.48 1.48 0 0 0-.37 2.06 1.54 1.54 0 0 0 .62.51h.05a1.6 1.6 0 0 0-.19.71A1.47 1.47 0 0 0 3 13.42v.1A1.46 1.46 0 0 0 4.4 15h4.83a5.6 5.6 0 0 0 2.48-.58l1-.42H14V7zM12 12.11l-1.19.52a3.6 3.6 0 0 1-1.58.37H5.1a.55.55 0 0 1-.53-.4l-.14-.48-.49-.21a.56.56 0 0 1-.34-.6l.09-.56-.42-.42a.56.56 0 0 1-.09-.68L3.55 9l-.4-.61A.28.28 0 0 1 3.3 8h5L7.14 4.51a4.2 4.2 0 0 1-.2-1.26V2.08A.09.09 0 0 1 7 2a.1.1 0 0 1 .08 0l.18.51a10 10 0 0 0 1.9 3.24l2.84 3z"/></svg>
+              Like
+            </button>
+            <button class="postActionBtn">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M5 8h5v1H5zm11-.5v.08a6 6 0 0 1-2.75 5L8 16v-3H5.5A5.51 5.51 0 0 1 0 7.5 5.62 5.62 0 0 1 5.74 2h4.76A5.5 5.5 0 0 1 16 7.5m-2 0A3.5 3.5 0 0 0 10.5 4H5.74A3.62 3.62 0 0 0 2 7.5 3.53 3.53 0 0 0 5.5 11H10v1.33l2.17-1.39A4 4 0 0 0 14 7.58zM5 7h6V6H5z"/></svg>
+              Comment
+            </button>
+            <button class="postActionBtn">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M4 10H2V5c0-1.66 1.34-3 3-3h3.85L7.42 0h2.44L12 3 9.86 6H7.42l1.43-2H5c-.55 0-1 .45-1 1zm8-4v5c0 .55-.45 1-1 1H7.15l1.43-2H6.14L4 13l2.14 3h2.44l-1.43-2H11c1.66 0 3-1.34 3-3V6z"/></svg>
+              Repost
+            </button>
+            <button class="postActionBtn">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M14 2 0 6.67l5 2.64 5.67-3.98L6.7 11l2.63 5z"/></svg>
+              Send
+            </button>
+          </div>
+        </div>
+
+        <a href="#" class="showAllLink">
+          <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M11.45 3 15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"/></svg>
+          Show all
+        </a>
+      </div>
+
+    </div><!-- end mainColumn -->
+
+    <!-- ─── SIDE COLUMN ──────────────────────────── -->
+    <div class="sideColumn">
+
+      <!-- Profile Language & URL -->
+      <div class="sectionCard">
+        <div class="sectionHeader">
+          <div class="sideCardTitle">Profile language</div>
+          <button class="sectionEditBtn">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.13 2.86a3 3 0 0 0-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 0 0 0-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"/></svg>
+          </button>
+        </div>
+        <div class="sideCardText">English</div>
+        <hr class="sectionDivider">
+        <div class="sectionHeader" style="margin-bottom:4px;">
+          <div class="sideCardTitle">Public profile &amp; URL</div>
+          <button class="sectionEditBtn">
+            <svg class="iconMd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21.13 2.86a3 3 0 0 0-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 0 0 0-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"/></svg>
+          </button>
+        </div>
+        <div class="sideCardText" style="color:var(--colorBrand);">www.linkedin.com/in/umairalimalik78</div>
+      </div>
+
+      <!-- Who viewers also viewed -->
+      <div class="sectionCard">
+        <div style="padding: 16px 16px 8px;">
+          <div class="sideCardTitle">Who your viewers also viewed</div>
+          <div class="sectionPrivateTag" style="margin-top:4px;">Private to you</div>
+        </div>
+
+        <div class="viewerCard">
+          <div class="viewerAvatar">
+            <img src="https://media.licdn.com/media/AAYQBAT4AAgAAQAAAAAAAFmBcs72C7iIS0CFQjiFA3HlhQ.png" alt="">
+          </div>
+          <div class="viewerDesc">Someone at DHA Suffa University</div>
+          <button class="viewBtn">View</button>
+        </div>
+        <hr class="sectionDivider" style="margin: 0 16px;">
+
+        <div class="viewerCard">
+          <div class="viewerAvatar">
+            <img src="https://media.licdn.com/media/AAYQBAT4AAgAAQAAAAAAAFYyXkzxvCU_SuG7bFr7usFkDA.png" alt="">
+          </div>
+          <div class="viewerDesc">Creative Designer at S.M.I.T (Saylani Mass I.T Training)</div>
+          <button class="viewBtn">View</button>
+        </div>
+        <hr class="sectionDivider" style="margin: 0 16px;">
+
+        <div class="viewerCard">
+          <div class="viewerAvatar">
+            <img src="https://media.licdn.com/media/AAYQBAT4AAgAAQAAAAAAAEC-8RKh2KEcRU20YyU3o5zGtA.png" alt="">
+          </div>
+          <div class="viewerDesc">Student at Shaheed Zulfikar Ali Bhutto Institute of Science and Technology</div>
+          <button class="viewBtn">View</button>
+        </div>
+      </div>
+
+      <!-- People you may know -->
+      <div class="sectionCard">
+        <div style="padding: 16px 16px 8px;">
+          <div class="sideCardTitle">People you may know</div>
+          <div class="sectionPrivateTag" style="margin-top:4px;color:var(--colorTextSecondary);font-size:13px;">From your school</div>
+        </div>
+
+        <div class="peopleCard">
+          <div class="peopleAvatar">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQFfQJzKckhWBA/profile-displayphoto-scale_100_100/B56Z1NDCaKHcAc-/0/1775114136810?e=1776902400&v=beta&t=YIqAMwHGZ0Ex1gOMeInwcCatsTiEpYT9S1eWJ3uDctk" alt="Muhammad Nasrullah">
+          </div>
+          <div>
+            <a href="#" class="peopleName">Muhammad Nasrullah</a>
+            <div class="peopleRole">Student at DHA Suffa University</div>
+          </div>
+          <button class="peopleConnectBtn">
+            <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M9 4a3 3 0 1 1-3-3 3 3 0 0 1 3 3M6.75 8h-1.5A2.25 2.25 0 0 0 3 10.25V15h6v-4.75A2.25 2.25 0 0 0 6.75 8M13 8V6h-1v2h-2v1h2v2h1V9h2V8z"/></svg>
+            Connect
+          </button>
+        </div>
+        <hr class="sectionDivider" style="margin: 0 16px;">
+
+        <div class="peopleCard">
+          <div class="peopleAvatar" style="background:#f3f2ef;">
+          </div>
+          <div>
+            <a href="#" class="peopleName">Pirachichawla Chawla</a>
+            <div class="peopleRole">Student at DHA Suffa University</div>
+          </div>
+          <button class="peopleConnectBtn">
+            <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M9 4a3 3 0 1 1-3-3 3 3 0 0 1 3 3M6.75 8h-1.5A2.25 2.25 0 0 0 3 10.25V15h6v-4.75A2.25 2.25 0 0 0 6.75 8M13 8V6h-1v2h-2v1h2v2h1V9h2V8z"/></svg>
+            Connect
+          </button>
+        </div>
+        <hr class="sectionDivider" style="margin: 0 16px;">
+
+        <div class="peopleCard">
+          <div class="peopleAvatar">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQEgIxMYCge-7A/profile-displayphoto-scale_100_100/B4EZgibBi5HgAc-/0/1752924183704?e=1776902400&v=beta&t=QfbUJcKcYGYJIcbOsy1t270revJi_4y7WRpDbO3m2VE" alt="Shiza Shahzad">
+          </div>
+          <div>
+            <a href="#" class="peopleName">Shiza Shahzad</a>
+            <div class="peopleRole">Student at DHA Suffa University</div>
+          </div>
+          <button class="peopleConnectBtn">
+            <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M9 4a3 3 0 1 1-3-3 3 3 0 0 1 3 3M6.75 8h-1.5A2.25 2.25 0 0 0 3 10.25V15h6v-4.75A2.25 2.25 0 0 0 6.75 8M13 8V6h-1v2h-2v1h2v2h1V9h2V8z"/></svg>
+            Connect
+          </button>
+        </div>
+        <hr class="sectionDivider" style="margin: 0 16px;">
+
+        <div class="peopleCard">
+          <div class="peopleAvatar">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQE1zI9-53d8gQ/profile-displayphoto-shrink_100_100/B56ZQHU7cAG8AY-/0/1735289715320?e=1776902400&v=beta&t=T7zexGEdDZ8vb1qHyxF5ZtIaWzHWf2cyiWT71JEn6lA" alt="Mahum Aftab">
+          </div>
+          <div>
+            <a href="#" class="peopleName">Mahum Aftab</a>
+            <div class="peopleRole">Web developer | UI/UX designer | Design Executive @GDGoC DSU</div>
+          </div>
+          <button class="peopleConnectBtn">
+            <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M9 4a3 3 0 1 1-3-3 3 3 0 0 1 3 3M6.75 8h-1.5A2.25 2.25 0 0 0 3 10.25V15h6v-4.75A2.25 2.25 0 0 0 6.75 8M13 8V6h-1v2h-2v1h2v2h1V9h2V8z"/></svg>
+            Connect
+          </button>
+        </div>
+
+        <a href="#" class="showAllLink">
+          <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M11.45 3 15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"/></svg>
+          Show all
+        </a>
+      </div>
+
+      <!-- You might like -->
+      <div class="sectionCard">
+        <div style="padding: 16px 16px 8px;">
+          <div class="sideCardTitle">You might like</div>
+          <div style="font-size:13px;color:var(--colorTextSecondary);margin-top:2px;">Pages for you</div>
+        </div>
+
+        <div class="companyCard">
+          <div class="companyLogo">
+            <img src="https://media.licdn.com/dms/image/v2/D4D0BAQFz18HetK8njw/company-logo_100_100/B4DZj7l6AvH4AQ-/0/1756567675392/brainx_technologies_logo?e=1776902400&v=beta&t=IKRd2pvcGKhuLtOJldw5IpWgKeWdQG3Bqs9KO-NEtjs" alt="BrainX Technologies">
+          </div>
+          <div style="flex:1;">
+            <div class="companyName">BrainX Technologies</div>
+            <div class="companyIndustry">IT Services and IT Consulting</div>
+            <div class="companyFollowers">160,488 followers</div>
+            <button class="companyFollowBtn">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"/></svg>
+              Follow
+            </button>
+          </div>
+        </div>
+        <hr class="sectionDivider" style="margin: 0 16px;">
+
+        <div class="companyCard">
+          <div class="companyLogo">
+            <img src="https://media.licdn.com/dms/image/v2/D4D0BAQG4rwW9SHwKQg/company-logo_100_100/B4DZo2DForIAAQ-/0/1761843371824/zaptatech_logo?e=1776902400&v=beta&t=QH7YLIVujiGpm5Q-Q7iJ-mbyIS47W9L1KPmMeMN8vac" alt="ZAPTA Technologies">
+          </div>
+          <div style="flex:1;">
+            <div class="companyName">ZAPTA Technologies (Pvt.) Limited</div>
+            <div class="companyIndustry">Software Development</div>
+            <div class="companyFollowers">176,667 followers</div>
+            <button class="companyFollowBtn">
+              <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"/></svg>
+              Follow
+            </button>
+          </div>
+        </div>
+
+        <a href="#" class="showAllLink">
+          <svg class="iconSm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M11.45 3 15 8l-3.55 5H9l2.84-4H2V7h9.84L9 3z"/></svg>
+          Show all
+        </a>
+      </div>
+
+    </div><!-- end sideColumn -->
+
+  </div><!-- end pageContainer -->
+
+  <!-- ─── FOOTER ─────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footerInner">
+      <div class="footerLinks">
+        <a href="#" class="footerLink">About</a>
+        <a href="#" class="footerLink">Accessibility</a>
+        <a href="#" class="footerLink">Talent Solutions</a>
+        <a href="#" class="footerLink">Community Guidelines</a>
+        <a href="#" class="footerLink">Careers</a>
+        <a href="#" class="footerLink">Marketing Solutions</a>
+        <a href="#" class="footerLink">Privacy &amp; Terms</a>
+        <a href="#" class="footerLink">Ad Choices</a>
+        <a href="#" class="footerLink">Advertising</a>
+        <a href="#" class="footerLink">Sales Solutions</a>
+        <a href="#" class="footerLink">Mobile</a>
+        <a href="#" class="footerLink">Small Business</a>
+        <a href="#" class="footerLink">Safety Center</a>
+      </div>
+      <div class="footerCopy">LinkedIn Corporation © 2026</div>
+    </div>
+  </footer>
+
+</body>
+</html>

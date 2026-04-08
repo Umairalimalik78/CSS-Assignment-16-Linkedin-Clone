@@ -955,7 +955,6 @@ margin-top: 2px;
     background: var(--blue-light);
 }
 
-/* ─── WHO VIEWERS ALSO VIEWED ───────────────────── */
 .viewerCard {
     display: flex;
     align-items: flex-start;

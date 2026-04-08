@@ -1129,7 +1129,7 @@ margin-top: 2px;
 }
 
 /* ─── MEDIA QUERIES ──────────────────────────────– */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     .pageContainer {
         grid-template-columns: 1fr;
     }
@@ -1238,4 +1238,4 @@ margin-top: 2px;
         padding: 5px 12px;
         font-size: 13px;
     }
-}
+} */

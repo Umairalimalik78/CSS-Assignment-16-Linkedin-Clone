@@ -158,7 +158,6 @@ nav li span {
     display: flex;
 }
 
-/* ─── LAYOUT ──────────────────────────────────── */
 .pageContainer {
     max-width: 1128px;
     margin: 24px auto;
@@ -180,15 +179,6 @@ nav li span {
     gap: 8px;
 }
 
-/* ─── CARD ──────────────────────────────────── */
-/* .card {
-background: var(--surface);
-border-radius: 8px;
-box-shadow: 0 0 0 1px var(--border), 0 2px 4px rgba(0, 0, 0, 0.05);
-overflow: hidden;
-} */
-
-/* ─── PROFILE TOP CARD ──────────────────────── */
 .profileTopCard {
     background: var(--surface);
     border-radius: 8px;
@@ -294,13 +284,6 @@ overflow: hidden;
     color: var(--text);
     margin-top: 4px;
 }
-
-/* 
-.profileEdu {
-font-size: 14px;
-color: var(--text-muted);
-margin-top: 2px;
-} */
 
 .profileLocation {
     font-size: 14px;
@@ -429,7 +412,6 @@ margin-top: 2px;
     outline: 1px solid var(--text);
 }
 
-/* ─── OPEN TO WORK BANNER ─────────────────────── */
 .openToWorkCard {
     width: fit-content;
     border-radius: 8px;
@@ -469,7 +451,6 @@ margin-top: 2px;
     padding: 4px;
 }
 
-/* ─── SECTION CARD ────────────────────────────── */
 .sectionCard {
     background: var(--surface);
     border-radius: 8px;
@@ -522,7 +503,6 @@ margin-top: 2px;
     line-height: 1.6;
 }
 
-/* ─── ANALYTICS ────────────────────────────────── */
 .analyticsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -584,7 +564,6 @@ margin-top: 2px;
     margin: 16px 0;
 }
 
-/* ─── ABOUT ─────────────────────────────────────── */
 .aboutText {
     font-size: 14px;
     line-height: 1.6;
@@ -617,7 +596,6 @@ margin-top: 2px;
     color: var(--text-muted);
 }
 
-/* ─── SERVICES ─────────────────────────────────── */
 .servicesSectionCard {
     padding: 0;
 }
@@ -645,7 +623,6 @@ margin-top: 2px;
     padding: 0 24px;
 }
 
-/* ─── ACTIVITY ──────────────────────────────────── */
 .activitySectionCard{
     overflow: hidden;
     padding: 0;
@@ -907,7 +884,6 @@ margin-top: 2px;
     margin-left: -8px;
 }
 
-/* ─── SUGGESTED FOR YOU ─────────────────────────── */
 .suggestedCard {
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -952,7 +928,6 @@ margin-top: 2px;
     color: var(--text);
 }
 
-/* ─── PEOPLE YOU MAY KNOW ───────────────────────── */
 .peopleCard {
     display: flex;
     align-items: center;
@@ -1065,7 +1040,6 @@ margin-top: 2px;
     background: var(--blue-light);
 }
 
-/* ─── YOU MIGHT LIKE ─────────────────────────────── */
 .companyCard {
     display: flex;
     align-items: flex-start;
@@ -1125,7 +1099,6 @@ margin-top: 2px;
     background: var(--blue-light);
 }
 
-/* ─── FOOTER ─────────────────────────────────────── */
 .footer {
     background: var(--surface);
     border-top: 1px solid var(--border);
@@ -1163,7 +1136,6 @@ margin-top: 2px;
     text-align: center;
 }
 
-/* ─── DROPDOWN ARROW ─────────────────────────────── */
 .caretIcon {
     display: inline-block;
     width: 0;
@@ -1175,7 +1147,6 @@ margin-top: 2px;
     vertical-align: middle;
 }
 
-/* ─── SVG ICONS ──────────────────────────────────── */
 .iconSm {
     width: 16px;
     height: 16px;
@@ -1190,7 +1161,6 @@ margin-top: 2px;
     color: var(--blue);
 }
 
-/* ─── MEDIA QUERIES ──────────────────────────────– */
 @media (max-width: 992px) {
     .pageContainer {
         grid-template-columns: 1fr;

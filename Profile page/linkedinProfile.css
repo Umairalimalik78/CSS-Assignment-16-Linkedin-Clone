@@ -646,11 +646,17 @@ margin-top: 2px;
 }
 
 /* ─── ACTIVITY ──────────────────────────────────── */
+.activitySectionCard{
+    overflow: hidden;
+    padding: 0;
+}
+
 .activityHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+    padding: 20px 24px 0;
 }
 
 .activityTitleGroup {
@@ -682,6 +688,7 @@ margin-top: 2px;
     gap: 8px;
     margin-bottom: 16px;
     flex-wrap: wrap;
+    padding: 0 24px;
 }
 
 .activityTab {
@@ -711,140 +718,193 @@ margin-top: 2px;
     background: #004c33;
 }
 
-.postCard {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.postHeader {
+.activityBody{
     display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 12px 16px 8px;
+    align-items: center;
+    gap: 20px;
+    width: 792px;
+    padding: 8px 24px;
+    overflow-x: scroll;
+    scrollbar-width: none;
 }
 
-.postAvatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.feedPost {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: 8px;
+    outline: 1px solid var(--border);
     overflow: hidden;
+    line-height: 1.25;
+    width: 350px;
     flex-shrink: 0;
 }
 
-.postAvatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.feedPostHeader {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 16px 0;
+    margin-bottom: 4px;
 }
 
-.postAuthorName {
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--blue);
-    cursor: pointer;
+.feedPostPrfileData {
+    display: flex;
+    gap: 10px;
 }
 
-.postAuthorName:hover {
-    text-decoration: underline;
-}
-
-.postAuthorHeadline {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-.postTime {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-.postText {
-    padding: 0 16px 12px;
-    font-size: 14px;
-    color: var(--text);
-    line-height: 1.5;
-}
-
-.postImage {
-    width: 100%;
-    aspect-ratio: 4/3;
+.postProfileImg {
+    width: 48px;
+    height: 48px;
     overflow: hidden;
-    background: #eee;
 }
 
-.postImage img {
+.postProfileImg img {
+    border-radius: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
-.postReactions {
+.postProfileAbout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.postProfileAbout p {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 8px 16px;
-    border-top: 1px solid var(--border);
 }
 
-.reactionIcons {
+.postProfileAbout .postPrfileName {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 13px;
-    color: var(--text-muted);
-    cursor: pointer;
 }
 
-.reactionIcon {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 2px solid var(--surface);
-    margin-right: -6px;
-    overflow: hidden;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
+.postProfileAbout .postPrfileName span {
+    font-size: 12px;
 }
 
-.reactionIconBlue {
-    background: #378fe9;
-}
-
-.reactionIconRed {
-    background: var(--red-text);
-}
-
-.postActions {
+.postActionBtns {
     display: flex;
     align-items: center;
-    gap: 0;
-    padding: 4px 8px;
+    gap: 4px;
+    flex: 0 0;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+
+.postThreeDotIcon,
+.postCrossIcon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.postThreeDotIcon svg,
+.postCrossIcon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.postCaption {
+    font-size: 14px;
+    padding: 0 16px;
+    line-height: 1.42;
+}
+
+.postCaption p {
+    max-height: 72px;
+    overflow: hidden;
+    padding: 4px 0;
+}
+
+.postFullCaption p{
+    max-height: fit-content;
+}
+
+.postCaption a {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.postCaption a:hover {
+    text-decoration: underline;
+}
+
+.postMediaBox {
+    width: 100%;
+    height: 100%;
+}
+
+.postMediaBox img {
+    width: 100%;
+}
+
+.feedPostFooter {
+    padding: 0 16px;
+}
+
+.postReactionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     border-top: 1px solid var(--border);
 }
 
-.postActionBtn {
+.postReactionBtn {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 14px;
-    border-radius: 4px;
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: background 0.15s;
-    flex: 1;
     justify-content: center;
+    height: 40px;
+    margin: 8px 0;
+    flex: 1;
+    gap: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
 }
 
-.postActionBtn:hover {
-    background: var(--light-border);
-    color: var(--text);
+.postReactionBtn:hover {
+    background-color: var(--light-border);
+}
+
+.postReactionBtn svg {
+    width: 16px;
+}
+
+.postReactionCounts {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    color: var(--text-muted);
+}
+
+.postTrigeredReact_Numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.postTrigeredReactCounts svg:not(:first-child) {
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
 }
 
 /* ─── SUGGESTED FOR YOU ─────────────────────────── */

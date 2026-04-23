@@ -1,0 +1,843 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+body a {
+    text-decoration: none;
+}
+
+:root {
+    --blue: #0a66c2;
+    --blue-hover: #004182;
+    --blue-light: #e8f3ff;
+    --bg: #f1ece5;
+    --surface: #ffffff;
+    --border: #dfdeda;
+    --light-border: #f3f3f3;
+    --text: #191919;
+    --text-muted: #666666;
+    --red-text: #b24020;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 99;
+    background-color: var(--surface);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+#navBar {
+    width: 1128px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_searchbar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--text-muted);
+    width: 280px;
+    height: 34px;
+    border-radius: 24px;
+}
+
+.searchBox .searchIcon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+}
+
+.searchBox .searchInput {
+    border: none;
+    font-size: 14px;
+    width: 100%;
+    margin-right: 8px;
+}
+
+.searchBox .searchInput:focus {
+    outline: none;
+}
+
+.searchBox:has(.searchInput:focus) {
+    border: 2px solid var(--text);
+    width: 100%;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul a>svg {
+    height: 24px;
+    align-self: center;
+}
+
+nav ul a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 52px;
+    width: 80px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.activeTab {
+    color: var(--text);
+    border-bottom: 2px solid var(--text);
+}
+
+nav ul a:hover {
+    color: var(--text);
+}
+
+nav li span {
+    font-size: 12px;
+}
+
+.userTab {
+    border-right: 1px solid var(--border);
+    margin-right: 4px;
+}
+
+.userTab img {
+    border-radius: 50%;
+}
+
+.userTab span {
+    display: flex;
+    align-items: center;
+}
+
+.navBtns {
+    width: fit-content;
+    margin: 0px 8px;
+}
+
+.navBtns span {
+    display: flex;
+}
+
+
+.mainLayout {
+    width: 100%;
+    margin-top: 54px;
+}
+
+.mainContainer {
+    max-width: 1128px;
+    display: grid;
+    grid-template-columns: 225px 555px 300px;
+    column-gap: 24px;
+    margin: auto;
+    padding: 24px 0;
+}
+
+.leftAside {
+    width: 225px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.asideCard {
+    background-color: var(--surface);
+    border-radius: 8px;
+    outline: 2px solid var(--border);
+    padding: 16px;
+    font-size: 12px;
+}
+
+.miniProfile {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--text);
+    padding: 0;
+}
+
+.miniProfile .miniProfileBg {
+    width: 100%;
+    height: 58px;
+    background-image: url("../assets/miniProfileBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.miniProfile .miniProfilePic {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin-top: -28px;
+    margin-left: 16px;
+    border: 2px solid var(--surface);
+}
+
+.miniProfileAbout {
+    padding: 16px;
+    font-size: 12px;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: -12px;
+}
+
+.miniProfileAbout h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.miniProfileLocation {
+    color: var(--text-muted);
+}
+
+.miniProfileEducation {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.miniProfileEducation img {
+    border-radius: 4px;
+    width: 16px;
+}
+
+.profileStatsCard {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.profileStatsCard .profileStats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.profileStatsCard .profileStats:hover {
+    text-decoration: underline;
+}
+
+.profileStats a {
+    color: var(--text);
+}
+
+.profileStats span {
+    color: var(--blue);
+}
+
+.subscriptionCard{
+    cursor: pointer;
+}
+
+.subscriptionCard:hover .subscriptionLink{
+    color: var(--blue);
+}
+
+.subscriptionCard p {
+    color: var(--text-muted);
+}
+
+.subscriptionLink {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.quickActionCard ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quickActionTab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.quickActionTab:hover {
+    text-decoration: underline;
+}
+
+.quickActionTab svg {
+    width: 16px;
+}
+
+.feedColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.createPostCard {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: 8px;
+    outline: 2px solid var(--border);
+    font-size: 14px;
+}
+
+.profile_caption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 16px 0;
+}
+
+.profile_caption img {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+.createPostButton {
+    padding: 14px 16px;
+    margin: 4px 0;
+    border-radius: 36px;
+    border: 1px solid var(--text-muted);
+    flex: 1 1;
+    font-size: 14px;
+    text-align: start;
+    font-weight: 600;
+    background-color: var(--surface);
+    cursor: pointer;
+}
+
+.createPostButton:hover {
+    background-color: var(--light-border);
+}
+
+.postmediaSelection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 4px;
+}
+
+.mediaSelection {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    width: fit-content;
+    padding: 0 8px;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mediaSelection:hover {
+    background-color: var(--light-border);
+}
+
+.mediaSelection svg {
+    width: 24px;
+}
+
+.addVideoSelection svg {
+    color: #5f9b41;
+}
+
+.addPhotoSelection svg {
+    color: #378fe9;
+}
+
+.writeArticleSelection svg {
+    color: #e06847;
+}
+
+.sortDivider {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sortDivider hr {
+    width: 100%;
+    height: 1px;
+}
+
+.sortdropdown {
+    display: flex;
+    align-items: end;
+    width: fit-content;
+    text-wrap: nowrap;
+    padding-left: 8px;
+}
+
+.sortdropdown span {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+}
+
+.feedPostContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.feedPost {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: 8px;
+    outline: 2px solid var(--border);
+    overflow: hidden;
+    line-height: 1.25;
+}
+
+.feedPostHeader {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 16px 0;
+    margin-bottom: 4px;
+}
+
+.feedPostPrfileData {
+    display: flex;
+    gap: 10px;
+}
+
+.postProfileImg {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+}
+
+.postProfileImg img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.postProfileAbout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.postProfileAbout p {
+    display: flex;
+    align-items: center;
+}
+
+.postProfileAbout .postPrfileName {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.postProfileAbout .postPrfileName span {
+    font-size: 12px;
+}
+
+.postActionBtns {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 0 0;
+    margin-top: -8px;
+    margin-right: -8px;
+}
+
+.postThreeDotIcon,
+.postCrossIcon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.postThreeDotIcon svg,
+.postCrossIcon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.postCaption {
+    font-size: 14px;
+    padding: 0 16px;
+    line-height: 1.42;
+}
+
+.postCaption p {
+    max-height: 72px;
+    overflow: hidden;
+    padding: 4px 0;
+}
+
+.postFullCaption p{
+    max-height: fit-content;
+}
+
+.postCaption a {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.postCaption a:hover {
+    text-decoration: underline;
+}
+
+.postMediaBox {
+    width: 100%;
+    height: 100%;
+}
+
+.postMediaBox img {
+    width: 100%;
+}
+
+.feedPostFooter {
+    padding: 0 16px;
+}
+
+.postReactionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid var(--border);
+}
+
+.postReactionBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin: 8px 0;
+    flex: 1;
+    gap: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+}
+
+.postReactionBtn:hover {
+    background-color: var(--light-border);
+}
+
+.postReactionBtn svg {
+    width: 16px;
+}
+
+.postReactionCounts {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    color: var(--text-muted);
+}
+
+.postTrigeredReact_Numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.postTrigeredReactCounts svg:not(:first-child) {
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+}
+
+.postMultiMediaBox {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 160px);
+    gap: 2px;
+}
+
+.postMediaMainCell {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+.postMediaToprightCell {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.postMediaMidrightCell {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.postMediaBottomRightCell {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    position: relative;
+}
+
+.postMediaCell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.postMediaOverlayCount{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--surface);
+}
+
+.rightAside {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dailyGameCard {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.asideCardHeading h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.recommendGameRow {
+    display: flex;
+    gap: 12px;
+    margin-left: 8px;
+    margin-right: -4px;
+    cursor: pointer;
+}
+
+.recommendGameRow img {
+    width: 64px;
+    height: 64px;
+}
+
+.gameAbout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.gameAbout svg {
+    width: 16px;
+}
+
+.gameDiscription>p:first-child {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gameDiscription>p:last-child {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.recommendationsCard {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.asideCardHeading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.asideCardHeading svg {
+    width: 16px;
+    height: 16px;
+}
+
+.recommendAccounts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recommendIdRow {
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.recommendIdRow img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.recommendIdAbout h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.recommendIdAbout p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.recommendIdAbout button {
+    font-size: 16px;
+    background-color: var(--surface);
+    width: fit-content;
+    border: 1px solid var(--text);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 14px;
+    border-radius: 24px;
+    margin-top: 4px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.recommendIdAbout button:hover{
+    background-color: var(--light-border);
+    outline: 1px solid;
+}
+
+.recommendIdAbout button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.viewAllrecommends {
+    font-size: 14px;
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text);
+    font-weight: 600;
+    width: fit-content;
+}
+
+.viewAllrecommends svg {
+    width: 16px;
+    margin-top: 2px;
+}
+
+.viewAllrecommends:hover {
+    background-color: var(--light-border);
+    border-radius: 4px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 24px;
+    position: sticky;
+    top: 54px;
+    z-index: 99;
+}
+
+.footerLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footerLinks>span {
+    font-size: 12px;
+    margin: 4px 8px;
+}
+
+.footerLinks a {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.footerLinks span:hover,
+.footerLinks a:hover {
+    text-decoration: underline;
+    color: var(--blue);
+}
+
+.footerLinks svg {
+    height: 12px;
+    width: 12px;
+}
+
+.copyRights {
+    font-size: 12px;
+    padding: 16px 12px;
+    text-align: center;
+}

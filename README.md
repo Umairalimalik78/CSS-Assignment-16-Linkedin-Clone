@@ -12,7 +12,7 @@ A pixel-perfect clone of LinkedIn built with pure **HTML** and **CSS** — featu
 
 ## 📸 Preview
 
-> *(Add a screenshot of your project here)*
+> <img width="1351" height="2181" alt="linked-in-clone-umair netlify app_dashboard_dashboard" src="https://github.com/user-attachments/assets/47473264-8788-447f-a22f-1675f5edaf77" />
 
 ---
 
